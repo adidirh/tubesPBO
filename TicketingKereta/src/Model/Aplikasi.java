@@ -8,6 +8,15 @@ package Model;
 
 import Database.FileDatabase;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+
 
 
 
@@ -37,7 +46,7 @@ public class Aplikasi {
     
     public Gerbong getGerbong(String id) {
         return daftarGerbongAP.stream()
-                .filter(e -> e.get().equals(id))
+                .filter(b -> b)
                 .findFirst().orElse(null);
     }
     

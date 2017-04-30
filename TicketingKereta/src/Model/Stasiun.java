@@ -1,5 +1,6 @@
 package Model;
 
+import java.io.Serializable;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,7 +11,7 @@ package Model;
  *
  * @author RH
  */
-public class Stasiun {
+public class Stasiun implements Serializable {
     private String namaStasiun;
     private String lokasiStasiun;
     private String stasiunFull;

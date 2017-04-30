@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author RH
  */
-public class Kereta {
+public class Kereta implements Serializable {
     private ArrayList<Gerbong> daftarGerbong;
     private String keretaFull;
     private String idKereta;
