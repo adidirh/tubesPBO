@@ -4,29 +4,49 @@
  * and open the template in the editor.
  */
 package Database;
-import java.io.EOFException;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 public class FileDatabase {
+    private String dbuser = "root";
+    private String dbpasswd = "";
+    private Statement stmt = null;
+    private Connection con = null;
+    private ResultSet rs = null;
     
-    public void saveData(Object o, String file){
-        throws FileNotFoundException, IOException {
-            FileNotFoundException fout = new FileNotFoundException(file);
-            ObjectOutputStream oout = new ObjectOutputStream(fout);
-            oout.writeObject(o);
-            oout.flush();
+    public FileDatabase() {
+        try {
+            Class.forName("org.gjt.mm.mysql.Driver");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,""+ e.getMessage(),"JDBC Driver Error", JOptionPane.WARNING_MESSAGE);
+        }
+        
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost/tubesPBO",dbuser, dbpasswd);
+            stmt = con.createStatement();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"" +e.getMessage(), "Connection Error", JOptionPane.WARNING_MESSAGE);
         }
     }
     
-    public object getObject(String file) {
-        throws FileNotFoundException, IOException, ClassNotFoundException, EOFException {
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
-            return ois.readObject();
+    public ResultSet getData(String SQLString) {
+        try {
+            rs = stmt.executeQuery(SQLString);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error : " +e.getMessage(), "Communication Error", JOptionPane.WARNING_MESSAGE);
+        }
+        return rs;
+    }
+    
+    public void query (String SQLString) {
+        try{
+            stmt.executeUpdate(SQLString);
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null,"Error : "+e.getMessage(), "Communication Error",JOptionPane.WARNING_MESSAGE);
         }
     }
-}
+    
+} 

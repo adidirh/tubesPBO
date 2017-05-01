@@ -11,14 +11,13 @@ import java.io.Serializable;
 public class Rute {
     private Stasiun stasiun1;
     private Stasiun stasiun2;
-    private ArrayList<Tiket> daftarTiketDibeli;
     private String rute;
     private String idRute;
 
-    public Rute(Stasiun stasiun1, Stasiun stasiun2, ArrayList<Tiket> daftarTiketDibeli, String rute) {
+    public Rute(Stasiun stasiun1, Stasiun stasiun2, String rute, String idRute) {
         this.stasiun1 = stasiun1;
         this.stasiun2 = stasiun2;
-        this.daftarTiketDibeli = daftarTiketDibeli;
+        this.idRute = idRute;
         this.rute = rute;
     }
     
@@ -38,27 +37,6 @@ public class Rute {
         this.stasiun2 = stasiun2;
     }
     
-    public void addRute(Tiket t) {
-        daftarTiketDibeli.add(t);
-    }
- 
-    public Tiket getTiket(String id) {
-        for(Tiket t : daftarTiketDibeli) {
-            if(t.getIdTiket().equals(id)) {
-                return t;
-            }
-        }
-        return null;
-    }
-    
-    public void removeTiket(String id) {
-        for(Tiket t : daftarTiketDibeli) {
-            if(t.getIdTiket().equals(id)) {
-                daftarTiketDibeli.remove(t);
-            }
-        }
-    }
-    
     public String getRute() {
         return rute;
     }
@@ -66,9 +44,17 @@ public class Rute {
     public void setRute(String rute) {
         this.rute = rute;
     }
-
+    
     
    /* public String daftarPembeli() {
         return  
     }*/ 
+
+    public String getIdRute() {
+        return idRute;
+    }
+
+    public void setIdRute(String idRute) {
+        this.idRute = idRute;
+    }
 }

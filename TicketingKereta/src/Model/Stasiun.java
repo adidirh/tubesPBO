@@ -12,15 +12,12 @@ import java.io.Serializable;
  * @author RH
  */
 public class Stasiun implements Serializable {
-    private String namaStasiun;
     private String lokasiStasiun;
-    private String stasiunFull;
     private String idStasiun;
 
-    public Stasiun(String namaStasiun, String lokasiStasiun, String stasiunFull) {
-        this.namaStasiun = namaStasiun;
+    public Stasiun( String lokasiStasiun, String idStasiun) {
         this.lokasiStasiun = lokasiStasiun;
-        this.stasiunFull = stasiunFull;
+        this.idStasiun = idStasiun;
     }
 
     public String getIdStasiun() {
@@ -29,22 +26,6 @@ public class Stasiun implements Serializable {
 
     public void setIdStasiun(String idStasiun) {
         this.idStasiun = idStasiun;
-    }
-    
-    public String getStasiunFull() {
-        return stasiunFull;
-    }
-
-    public void setStasiunFull(String stasiunFull) {
-        this.stasiunFull = stasiunFull;
-    }
-
-    public String getNamaStasiun() {
-        return namaStasiun;
-    }
-
-    public void setNamaStasiun(String namaStasiun) {
-        this.namaStasiun = namaStasiun;
     }
 
     public String getLokasiStasiun() {

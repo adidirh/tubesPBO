@@ -6,7 +6,7 @@
 package Driver;
 
 import Console.Console;
-import Model.Aplikasi;
+import Model.Apk;
 
 /**
  *
@@ -14,6 +14,6 @@ import Model.Aplikasi;
  */
 public class Driver {
     public static void main(String[] args) {
-        Aplikasi app = new Aplikasi();
+        Apk app = new Apk();
     }
 }

@@ -2,6 +2,7 @@ package Model;
 
 import java.util.Date;
 import java.io.Serializable;
+import java.util.ArrayList;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,26 +15,18 @@ import java.io.Serializable;
  */
 public class Tiket implements Serializable {
     private String jenisKereta;
-    private String stasiunAwal;
-    private String stasiunTuj;
+    private ArrayList<Rute> daftarRute;
     private String noKtp;
     private String namaPembeli;
     private String idTiket;
-    private Date tanggal;
 
-    public Tiket(String jenisKereta, String stasiunAwal, String stasiunTuj, String noKtp, String namaPembeli, String idTiket, Date tanggal) {
+    public Tiket(String jenisKereta,String noKtp, String namaPembeli, String idTiket, ArrayList<Rute> daftarRute) {
         this.jenisKereta = jenisKereta;
-        this.stasiunAwal = stasiunAwal;
-        this.stasiunTuj = stasiunTuj;
         this.noKtp = noKtp;
         this.namaPembeli = namaPembeli;
         this.idTiket = idTiket;
-        this.tanggal = tanggal;
+        daftarRute = new ArrayList();
     }
-    
-    /*Tiket(Date tanggal) {
-        this.tanggal = tanggal;
-    }*/
 
     public String getJenisKereta() {
         return jenisKereta;
@@ -41,22 +34,6 @@ public class Tiket implements Serializable {
 
     public void setJenisKereta(String jenisKereta) {
         this.jenisKereta = jenisKereta;
-    }
-
-    public String getStasiunAwal() {
-        return stasiunAwal;
-    }
-
-    public void setStasiunAwal(String stasiunAwal) {
-        this.stasiunAwal = stasiunAwal;
-    }
-
-    public String getStasiunTuj() {
-        return stasiunTuj;
-    }
-
-    public void setStasiunTuj(String stasiunTuj) {
-        this.stasiunTuj = stasiunTuj;
     }
 
     public String getNoKtp() {
@@ -82,4 +59,13 @@ public class Tiket implements Serializable {
     public void setIdTiket(String idTiket) {
         this.idTiket = idTiket;
     }
+
+    public ArrayList<Rute> getDaftarRute() {
+        return daftarRute;
+    }
+
+    public void setDaftarRute(ArrayList<Rute> daftarRute) {
+        this.daftarRute = daftarRute;
+    }
+    
 }

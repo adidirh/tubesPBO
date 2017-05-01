@@ -13,7 +13,6 @@ import java.io.Serializable;
  * @author RH
  */
 public class Gerbong implements Serializable {
-    private String gerbongFull;
     private String jmlGerbong;
     private String idGerbong;
 
@@ -28,14 +27,6 @@ public class Gerbong implements Serializable {
 
     public void setJmlGerbong(String jmlGerbong) {
         this.jmlGerbong = jmlGerbong;
-    }
-    
-    public String getGerbongFull() {
-        return gerbongFull;
-    }
-
-    public void setGerbongFull(String gerbongFull) {
-        this.gerbongFull = gerbongFull;
     }
 
     public String getIdGerbong() {

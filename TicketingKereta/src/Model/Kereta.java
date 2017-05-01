@@ -15,12 +15,23 @@ import java.io.Serializable;
  */
 public class Kereta implements Serializable {
     private ArrayList<Gerbong> daftarGerbong;
-    private String keretaFull;
     private String idKereta;
+    private String jenisKereta;
+    
 
     public Kereta(ArrayList<Gerbong> daftarGerbong, String keretaFull) {
-        this.keretaFull = keretaFull;
+        daftarGerbong = new ArrayList();
+        this.idKereta = idKereta;
     }
+
+    public String getJenisKereta() {
+        return jenisKereta;
+    }
+
+    public void setJenisKereta(String jenisKereta) {
+        this.jenisKereta = jenisKereta;
+    }
+    
     
     public void addGerbong(Gerbong g){
         daftarGerbong.add(g);
@@ -43,20 +54,16 @@ public class Kereta implements Serializable {
         }
     }
 
-    public String getKeretaFull() {
-        return keretaFull;
-    }
-
-    public void setKeretaFull(String keretaFull) {
-        this.keretaFull = keretaFull;
-    }
-
     public String getIdKereta() {
         return idKereta;
     }
 
     public void setIdKereta(String idKereta) {
         this.idKereta = idKereta;
+    }
+    
+    public Gerbong getGerbongByIndex(int index){
+        return daftarGerbong.get(index);
     }
     
 }
