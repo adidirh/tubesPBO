@@ -15,5 +15,7 @@ import Model.Apk;
 public class Driver {
     public static void main(String[] args) {
         Apk app = new Apk();
+        Console console = new Console(app);
+        console.menuUtama();
     }
 }

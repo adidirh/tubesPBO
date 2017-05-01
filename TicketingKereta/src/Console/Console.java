@@ -5,14 +5,9 @@
  */
 package Console;
 import Database.FileDatabase;
-import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import Model.Apk;
-import Model.Kereta;
-import Model.Rute;
-import Model.Stasiun;
-import Model.Tiket;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 /**
@@ -29,7 +24,7 @@ public class Console {
         cinInt = new Scanner(System.in);
         cinStr = new Scanner(System.in);
     }
-    
+
     public int input(){
         try {
             return cinInt.nextInt();
